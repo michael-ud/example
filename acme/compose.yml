@@ -1,0 +1,23 @@
+services:
+  bistro:
+    container_name: bistro
+    build:
+      context: .
+      dockerfile: bistro/Dockerfile
+    volumes:
+      - ./grocer:/project/grocer
+      - ./bistro:/project/bistro
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+  cafe:
+    container_name: cafe
+    build:
+      context: .
+      dockerfile: cafe/Dockerfile
+    volumes:
+      - ./grocer:/project/grocer
+      - ./cafe:/project/cafe
+    restart: unless-stopped
+    ports:
+      - 8081:8081

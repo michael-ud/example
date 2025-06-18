@@ -1,2 +1,3 @@
-# example
+# Example
+
 Example directory structure
